@@ -1,0 +1,26 @@
+body {
+	background: linear-gradient(to bottom right, #ECE9E6, #fff);
+	display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+ }
+main {
+    flex: 1 0 auto;
+  }
+nav {
+	background: #1c92d2;
+	position: relative;
+}
+.page-footer {
+	background-color: #484848;
+}
+
+.sidebar,
+.main_content {
+	background: #fff;
+	box-shadow: -4px 3px 5px #aaa;
+}
+.main_content {
+	height: -webkit-fill-available;
+	min-height: 300px;
+}
