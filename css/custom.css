@@ -23,6 +23,15 @@ nav {
 .main_content {
 	height: -webkit-fill-available;
 	min-height: 300px;
+	background: #aaa;
+}
+
+/* SIDEBAR ONLY */
+#sidebar li a {
+	color: #000;
+}
+#sidebar li.selected {
+	text-decoration: underline;
 }
 
 /*CONTENT PAGE ONLY*/
