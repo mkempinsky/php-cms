@@ -24,3 +24,24 @@ nav {
 	height: -webkit-fill-available;
 	min-height: 300px;
 }
+
+/*CONTENT PAGE ONLY*/
+
+#content_page .subject_name { 
+	background: #9fa8da;
+	padding: 5px 10px; 
+}
+#content_page .page_name {
+	background: transparent;
+	padding: 5px 0px 5px 30px;
+}
+#content_page .page_name:hover {
+	background: #ddd;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+/*STAFF PAGE ONLY*/
+.staff_menu .btn {
+	margin-top: 20px;
+}
