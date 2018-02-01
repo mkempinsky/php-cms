@@ -2,10 +2,6 @@
 	require_once('inc/db_connection.php');
 	require_once('inc/functions.php');
 	include('inc/head.php');
-
-	// 3. preform db query
-	$all_subjects = mysqli_query( $db, 'SELECT * FROM subjects');
-		if(!$all_subjects){ die('Database Query Failed: ' . mysqli());}
 ?>
 
 <div id="content_page" class="container">
@@ -17,26 +13,21 @@
 				<ul class="subject_list col m6">
 				<?php
 
-					// 4. use returned data
-					while( $row = mysqli_fetch_array($all_subjects) ){
+					$all_subjects = get_all_subjects();
 
-						$subject = ucwords(strtolower($row["menu_name"]));
+					while( $subject = mysqli_fetch_array($all_subjects) ){
 
-						echo "<li class=\"subject_name\"> {$subject} </li>";
-						
-						$pages = mysqli_query( $db, 
-						"SELECT * FROM pages 
-						WHERE subject_id = {$row["id"]}");
+						echo "<li class=\"subject_name\"> {$subject['menu_name']}</li>";
 
-						if(!$pages){ die('Database Query Failed: ' . mysqli());}
+						$subject_id = $subject['id'];
 
+						$pages = get_pages_for_subject( $subject['id'] );
 
 						echo "<ul class='pages'>";
-						while( $row = mysqli_fetch_array($pages) ){
 
-							$page = ucwords(strtolower($row["menu_name"]));
+						while( $page = mysqli_fetch_array($pages) ){
 
-							echo "<li class=\"page_name\"><i class=\"tiny material-icons\">chevron_right</i>{$page} </li>";
+							echo "<li class=\"page_name\"><i class=\"tiny material-icons\">chevron_right</i>{$page['menu_name']} </li>";
 						}
 						echo "</ul>";
 					}
