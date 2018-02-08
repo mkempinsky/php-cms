@@ -36,6 +36,19 @@ function get_pages_for_subject( $subject_id ){
 
 }
 
+function get_subject_by_id($subject_id){
+
+	global $db;
+	$query = 'SELECT * FROM subjects WHERE id=' . $subject_id . ' LIMIT 1';
+
+	$result_set = mysqli_query( $db, $query );
+
+	$subject_name = mysqli_fetch_array($result_set);
+
+	return $subject_name;
+
+}
+
 
 
 
