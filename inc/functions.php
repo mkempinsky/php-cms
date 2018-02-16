@@ -43,9 +43,36 @@ function get_subject_by_id($subject_id){
 
 	$result_set = mysqli_query( $db, $query );
 
-	$subject_name = mysqli_fetch_array($result_set);
+	// REMEMBER: if no rows are returned, fetch array will return false.
 
-	return $subject_name;
+	if ($subject = mysqli_fetch_array($result_set)){
+
+		return $subject;
+
+	} else {
+
+		return NULL;
+	}
+
+}
+
+function get_page_by_id($page_id){
+
+	global $db;
+	$query = 'SELECT * FROM pages WHERE id=' . $page_id . ' LIMIT 1';
+
+	$result_set = mysqli_query( $db, $query );
+
+	// REMEMBER: if no rows are returned, fetch array will return false.
+
+	if ( $page = mysqli_fetch_array($result_set)){
+
+		return $page;
+
+	} else {
+
+		return NULL;
+	}
 
 }
 
