@@ -32,6 +32,13 @@
 					echo '<h3>Hmm, we can\'t seem to find what you\'re looking for.</h3>';
 				}
 			?>
+			<div class="page_content">
+				<?php 
+					if(isset($_GET['page'])){
+						echo '<h>' . ucfirst($selected_page['content']) . '</h>';
+					}
+				?>
+			</div>
 		</div>
 	</div>
 </div>
