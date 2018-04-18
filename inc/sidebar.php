@@ -36,4 +36,5 @@
 
 	?>
 	</ul>
+	<a href='new_subject.php'><i class="tiny material-icons">add_box</i> Add New Subject</a>
 </div>

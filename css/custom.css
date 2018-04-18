@@ -18,9 +18,10 @@ nav {
 	margin-bottom: 0;
 }
 
-.main_content {
+.main_content{
 	height: -webkit-fill-available;
 	min-height: 300px;
+	padding: 10px 55px;
 	background: #fff;
 	box-shadow: -4px 3px 5px #818181;
 }

@@ -76,6 +76,26 @@ function get_page_by_id($page_id){
 
 }
 
+function find_selected_page(){
+
+	global $selected_subject;
+	global $selected_page;
+	
+	if( isset($_GET['subj']) ){
+		$sel_subj = $_GET['subj'];
+		$sel_page = '';
+		$selected_subject = get_subject_by_id($sel_subj);
+	} elseif( isset($_GET['page']) ){
+		$sel_page = $_GET['page'];
+		$sel_subj = '';
+		$selected_page = get_page_by_id($sel_page);
+	} else {
+		$sel_subj = '';
+		$sel_page = '';
+	}
+	
+}
+
 
 
 

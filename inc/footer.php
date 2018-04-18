@@ -27,9 +27,9 @@
   </body>
   <?php 
     // 5. Close connection
-    if(isset($db)){
-      my_sqli_close($db);
-    }
+    // if(isset($db)){
+    //   my_sqli_close($db);
+    //}
   ?>
 </html>
             
